@@ -1,0 +1,21 @@
+This is a project made to convert the standard Seismograph to a digital one , saves paper XD
+
+this project uses an arduino uno and a MPU6050 gyroscope accelerometer module
+
+the module is connected to the arduino in the following way:
+
+MPU6050 | ARDUINO
+vcc     | 5v
+GND     | GND
+SCL     | A4
+SDA     | A5
+ADO     | GND
+
+If the acceleration in the gyroscope is greater than 15 m/s^2 then it records the next 500 acceleration points in the x and y axis each with 
+a gap of 0.050s 
+
+acceleration is sent to ethe laptop through the serial bus which is recieved by the python program 
+
+the acceleration is converted to Displacement and is plotted with matplotlib , it is a live graph
+
+there will be a delay in the real time graph plotting due to the limitations of USB
